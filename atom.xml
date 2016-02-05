@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Mr Bug]]></title>
+  <subtitle><![CDATA[We are Mr Bug!]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="https://mrbugteam.github.io/"/>
+  <updated>2016-02-05T13:20:21.000Z</updated>
+  <id>https://mrbugteam.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Mr Bug]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[“京东钱包” 体验报告]]></title>
+    <link href="https://mrbugteam.github.io/2016/02/05/%E4%BA%AC%E4%B8%9C%E9%92%B1%E5%8C%85/"/>
+    <id>https://mrbugteam.github.io/2016/02/05/京东钱包/</id>
+    <published>2016-02-05T07:15:00.000Z</published>
+    <updated>2016-02-05T13:20:21.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="We_are_Mr_Bug_21_We_are_App_Bug_Hunter_21_21_21"><a href="#We_are_Mr_Bug_21_We_are_App_Bug_Hunter_21_21_21" class="headerlink" title="We are Mr Bug! We are App Bug Hunter!!!"></a>We are Mr Bug! We are App Bug Hunter!!!</h1><h1 id="u76EE_u7684"><a href="#u76EE_u7684" class="headerlink" title="目的"></a>目的</h1><p>用评分的形式，通过:安全、性能、稳定三个方面去检测评估一款APP。</p>
+<h1 id="u6D3B_u52A8_u7B80_u4ECB"><a href="#u6D3B_u52A8_u7B80_u4ECB" class="headerlink" title="活动简介"></a>活动简介</h1><ul>
+<li>主刀医生: Mr Bug 项目团队</li>
+<li>发起时间: 11月4日</li>
+<li>发起方: 毛里求斯</li>
+<li>体检目标: 京东钱包 3.11.1</li>
+<li>体检项: <strong>性能，安全，稳定</strong></li>
+</ul>
+<h1 id="u603B_u5206"><a href="#u603B_u5206" class="headerlink" title="总分"></a>总分</h1><p>总分为 61.54 <em> 33.3%（安全）+ 67.44 </em> 33.3%（性能） + 84.0 * 33.3%（稳定性）= 70.99 分。</p>
+<a id="more"></a>
+<h1 id="u4F53_u68C0_u7ED3_u679C_u6982_u8981"><a href="#u4F53_u68C0_u7ED3_u679C_u6982_u8981" class="headerlink" title="体检结果概要"></a>体检结果概要</h1><p><img src="https://testerhome.com/photo/2016/30b83054700f45582f9b60199fabcfa8.png" alt=""></p>
+<p><img src="https://testerhome.com/photo/2016/4179963b742493468b07e19d552d5c57.png" alt=""></p>
+<p><img src="https://testerhome.com/photo/2016/da5364d7242b6de53f1f7111fcfc426d.png" alt=""></p>
+<h1 id="u5F97_u5206_u8BE6_u7EC6_u4FE1_u606F"><a href="#u5F97_u5206_u8BE6_u7EC6_u4FE1_u606F" class="headerlink" title="得分详细信息"></a>得分详细信息</h1><h2 id="u5B89_u5168"><a href="#u5B89_u5168" class="headerlink" title="安全"></a>安全</h2><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>满分</th>
+<th>得分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本地数据敏感信息均经过加密</td>
+<td>3.85</td>
+<td>0.0</td>
+<td>发现cookies数据库</td>
+</tr>
+<tr>
+<td>本地数据没有明文存储的敏感信息</td>
+<td>3.85</td>
+<td>0.0</td>
+<td>shared_prefs目录下MYINFO.xml文件中暴露了用户名，如果是手机号的话就很麻烦</td>
+</tr>
+<tr>
+<td>本地数据篡改检测</td>
+<td>3.85</td>
+<td>3.85</td>
+<td>修改数据后，更换xml文件后应用没有提醒，但是会被覆盖掉</td>
+</tr>
+<tr>
+<td>使用 https</td>
+<td>7.69</td>
+<td>7.69</td>
+<td>网络连接主要有两类，一类是操作事件类，主要收集用户操作信息，采用 http ；另一类是业务类，主要是 app 的功能（登陆、注册、投资等主要操作），采用 https</td>
+</tr>
+<tr>
+<td>不允许使用自定义 ssl 证书</td>
+<td>3.85</td>
+<td>3.85</td>
+<td>把抓包工具的 ssl 证书加入到系统信任证书并设置代理后，所有 https 通讯均会失败（握手时会检查出使用的不是京东的证书）</td>
+</tr>
+<tr>
+<td>敏感信息加密传输</td>
+<td>7.69</td>
+<td>7.69</td>
+<td>所有包含敏感信息的网络包均通过 https 通道，且不支持第三方证书，难以解密</td>
+</tr>
+<tr>
+<td>数据包防篡改校验（服务端）</td>
+<td>7.69</td>
+<td>7.69</td>
+<td>由于无法篡改网络包，故此扫描项无法进行</td>
+</tr>
+<tr>
+<td>数据包防篡改校验（客户端）</td>
+<td>7.69</td>
+<td>7.69</td>
+<td>由于无法篡改网络包，故此扫描项无法进行</td>
+</tr>
+<tr>
+<td>DNS 劫持校验</td>
+<td>3.85</td>
+<td>3.85</td>
+<td></td>
+</tr>
+<tr>
+<td>权限扫描，除少量与外部沟通的组件外其他组件不允许外部调用</td>
+<td>7.69</td>
+<td>0.0</td>
+<td>扫描结果显示有36个 activity ，4个 broadcast receiver 和4个 services 可被外部调用。</td>
+</tr>
+<tr>
+<td>各 activity 接收空/具有非法值的 intent 后保持稳定</td>
+<td>3.85</td>
+<td>3.85</td>
+<td>有些 activity 传入空 Indent 后回出现 NullPointException ，但应用会改为启动 MainActivity ，不会崩溃</td>
+</tr>
+<tr>
+<td>content provider 防 sql 注入</td>
+<td>3.85</td>
+<td>3.85</td>
+<td>content provider 不能被外部调用</td>
+</tr>
+<tr>
+<td>content provider 防遍历文件</td>
+<td>3.85</td>
+<td>3.85</td>
+<td>content provider 不能被外部调用</td>
+</tr>
+<tr>
+<td>DEX加壳保护，防止静态反编译直接获取源码</td>
+<td>7.69</td>
+<td>0.0</td>
+<td>无防护，apktools直接反编译</td>
+</tr>
+<tr>
+<td>资源文件加密，防止直接查看或修改资源文件</td>
+<td>3.85</td>
+<td>0.0</td>
+<td>无防护，可直接获取资源文件</td>
+</tr>
+<tr>
+<td>反二次打包，使二次打包时无法成功或打包后的apk无法安装使用</td>
+<td>7.69</td>
+<td>0.0</td>
+<td>无防护，可植入第三方代码重打包</td>
+</tr>
+<tr>
+<td>so文件保护，防止高级调试工具对so文件进行动态调试获取接口等敏感信息</td>
+<td>3.85</td>
+<td>0.0</td>
+<td>未做防护，so文件可反编译，可打断点调试</td>
+</tr>
+<tr>
+<td>屏蔽日志输出流中的info、debug等信息</td>
+<td>3.85</td>
+<td>3.85</td>
+<td></td>
+</tr>
+<tr>
+<td>核心业务中无敏感信息在日志中输出</td>
+<td>3.85</td>
+<td>3.85</td>
+</tr>
+</tbody>
+</table>
+<h2 id="u6027_u80FD"><a href="#u6027_u80FD" class="headerlink" title="性能"></a>性能</h2><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>满分</th>
+<th>得分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内存 不超过80M</td>
+<td>11.11</td>
+<td>5.28</td>
+<td>实际内存峰值为 122 M</td>
+</tr>
+<tr>
+<td>流量 页面消耗不超过200KB</td>
+<td>11.11</td>
+<td>9.44</td>
+<td>实际页面消耗达到 230 KB</td>
+</tr>
+<tr>
+<td>耗电量 每小时不超过 300 mAh</td>
+<td>11.11</td>
+<td>11.11</td>
+<td>实际耗电量为 300 mAh</td>
+</tr>
+<tr>
+<td>页面重绘 3x 和 4x 重绘不超过 1/3</td>
+<td>11.11</td>
+<td>0.0</td>
+<td>实际 3x 和 4x 重绘超过 1/3 的页面有20个</td>
+</tr>
+<tr>
+<td>无内存泄露</td>
+<td>11.11</td>
+<td>8.89</td>
+<td>内存泄露点有1个</td>
+</tr>
+<tr>
+<td>无内存抖动</td>
+<td>11.11</td>
+<td>6.67</td>
+<td>内存抖动点有2个</td>
+</tr>
+<tr>
+<td>帧率不小于10</td>
+<td>11.11</td>
+<td>7.78</td>
+<td>最低帧率为7 fps</td>
+</tr>
+<tr>
+<td>启动时间 热启动时间不超过3s</td>
+<td>11.11</td>
+<td>7.16</td>
+<td>综合时间取全新启动。启动时间为 6.1s</td>
+</tr>
+<tr>
+<td>响应时间 关键业务响应时间不超过3s</td>
+<td>11.11</td>
+<td>11.11</td>
+<td>关键业务最大响应时间为 2.26s</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>备注：其中 内存抖动、内存泄露 采用的测试机为 小米 红米Note1 ，其它项为 Mi3 联通版。详细内容请看 <a href="/#设备配置">设备配置</a></p>
+</blockquote>
+<h2 id="u7A33_u5B9A_u6027"><a href="#u7A33_u5B9A_u6027" class="headerlink" title="稳定性"></a>稳定性</h2><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>满分</th>
+<th>得分</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>弱网环境跑monkey 异常概率低于万分7</td>
+<td>10.0</td>
+<td>6.0</td>
+<td>（ANR）异常2次</td>
+</tr>
+<tr>
+<td>无网环境跑monkey 异常概率低于万分7</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>正常网络环境跑monkey 异常概率低于万分7</td>
+<td>30.0</td>
+<td>30.0</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>无后台进程应用持续运行10小时无异常情况</td>
+<td>20.0</td>
+<td>20.0</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>系统Cpu占用率高于80%以上持续运行5小时无异常退出</td>
+<td>10.0</td>
+<td>8.0</td>
+<td>（ANR）异常1次</td>
+</tr>
+<tr>
+<td>在测试过程中无明显crash，卡顿等等情况</td>
+<td>20.0</td>
+<td>10.0</td>
+<td>测试过程中和跑monkey的时候经常性退出需要重新登录</td>
+</tr>
+</tbody>
+</table>
+<p>由于篇幅所限，评分规则放在报告末尾的 <a href="/#附录">附录</a>。有兴趣的同学可以<a href="/#附录">点击查看</a></p>
+<h1 id="Bug_List"><a href="#Bug_List" class="headerlink" title="Bug List"></a>Bug List</h1><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类型</th>
+<th>严重级别</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>内存溢出</td>
+<td>P0</td>
+<td>拍立返时，点击拍照，屏幕卡在转圈loading界面，日志出现out of memory</td>
+</tr>
+<tr>
+<td>2</td>
+<td>内存泄露</td>
+<td>P0</td>
+<td>MAT 分析内存情况时发现内存泄露嫌疑对象：com.wangyin.maframe.cache.ImageMemoryCache</td>
+</tr>
+<tr>
+<td>3</td>
+<td>其他体验问题</td>
+<td>P1</td>
+<td>在测试过程中经常出现要求重新登录，体验不是很流畅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>内存抖动</td>
+<td>P1</td>
+<td>在用户余额页面切换至京东小金库模块会有明显内存抖动</td>
+</tr>
+<tr>
+<td>5</td>
+<td>内存抖动</td>
+<td>P1</td>
+<td>在使用扫一扫时，存在明显的内存抖动</td>
+</tr>
+<tr>
+<td>6</td>
+<td>界面重绘</td>
+<td>P1</td>
+<td>至少20个界面出现3x或者4x重绘</td>
+</tr>
+<tr>
+<td>7</td>
+<td>功能</td>
+<td>P1</td>
+<td>电影票-观看影片预告片，点击左上方关闭按钮，仍然在播放视频</td>
+</tr>
+<tr>
+<td>8</td>
+<td>功能</td>
+<td>P1</td>
+<td>在操作过程中至少遇见三次突然需要重新登录的情况</td>
+</tr>
+<tr>
+<td>9</td>
+<td>安全</td>
+<td>P1</td>
+<td>apk包可直接被apktools等工具反编译得到源码与资源文件</td>
+</tr>
+<tr>
+<td>10</td>
+<td>安全</td>
+<td>P1</td>
+<td>反编译得到的源码，经过二次修改后可直接打包成新的apk文件，可注入病毒与广告</td>
+</tr>
+<tr>
+<td>11</td>
+<td>内存峰值</td>
+<td>P2</td>
+<td>在界面间频繁操作，内存占用峰值，达到122M</td>
+</tr>
+<tr>
+<td>12</td>
+<td>帧率</td>
+<td>P2</td>
+<td>操作界面过程中，帧率一般在10以下，较卡顿</td>
+</tr>
+<tr>
+<td>13</td>
+<td>安全</td>
+<td>P3</td>
+<td>修改手势密码的界面可通过外部 indent 启动，若此时京东钱包在后台运行并处于已登录状态，将可直接修改手势密码，绕过界面上必须先输入登录密码才可修改手势密码的限制</td>
+</tr>
+<tr>
+<td>14</td>
+<td>启动时间</td>
+<td>P3</td>
+<td>启动时间较长，平均启动时间达到6.1s</td>
+</tr>
+<tr>
+<td>15</td>
+<td>体验</td>
+<td>P3</td>
+<td>手势密码部分划较快时，可能出现中间经过的点没有滑到</td>
+</tr>
+<tr>
+<td>16</td>
+<td>安全</td>
+<td>P3</td>
+<td>反编译后，libWangyinCryptoLib.so等加密库可直接断点调试</td>
+</tr>
+<tr>
+<td>17</td>
+<td>流量</td>
+<td>P4</td>
+<td>随机打开活动页面，流量最大达到230kb</td>
+</tr>
+<tr>
+<td>18</td>
+<td>安全</td>
+<td>P5</td>
+<td>shared_prefs目录下MYINFO.xml文件中暴露了用户名（若包含其他信息则可能出现泄漏）</td>
+</tr>
+</tbody>
+</table>
+<h1 id="u603B_u4F53_u7ED3_u8BBA"><a href="#u603B_u4F53_u7ED3_u8BBA" class="headerlink" title="总体结论"></a>总体结论</h1><h3 id="u5B89_u5168-1"><a href="#u5B89_u5168-1" class="headerlink" title="安全"></a>安全</h3><p>好的地方：</p>
+<ul>
+<li>敏感数据网络传输使用 https ，且应用内自动校验服务端 ssl 证书，能有效阻止 dns 篡改、代理抓包等获取传输数据的手段。</li>
+<li>日志输出中没有敏感信息</li>
+</ul>
+<p>不好的地方</p>
+<ul>
+<li>作为金融软件，没有对应用本身任何加壳、防重打包、防篡改资源文件、防反编译方面的保护。 <del>甚至代码混淆也没有</del>（更正：有代码混淆，只是程度还不是太高）。大大降低了攻击者制作恶意包的门槛。且经过团队成员尝试，确实能重打包出可正常使用的应用。</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2016/f35f8a39f277dd52d111aa36ef204b89.jpg" alt=""></p>
+<ul>
+<li>本地数据库未加密，且存有部分敏感信息</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2016/6cfb89a1243b8fbb5ae93017dbadabdb.png" alt=""></p>
+<ul>
+<li>组件暴露过多，甚至连相当重要的修改手势密码的 activity 也是可以被外部调用的。这会导致用户在不知情的情况下被其他人修改手势密码。</li>
+</ul>
+<h3 id="u6027_u80FD-1"><a href="#u6027_u80FD-1" class="headerlink" title="性能"></a>性能</h3><p>好的地方：</p>
+<ul>
+<li>耗电量不是太大</li>
+<li>关键业务启动时间在 3s 内</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2016/e5db865baada5c813ed92471d4ddd6f7.png" alt=""></p>
+<p>不好的地方</p>
+<ul>
+<li>内存峰值过大，超过 120 M</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2015/82323a4c76753d3bb36aa40e407976ee.png" alt=""></p>
+<ul>
+<li>发现1处内存泄露和2处内存抖动，内存管理不大理想</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2015/afdf6528e700cca33fe44add22428a07.png" alt=""></p>
+<ul>
+<li>页面重绘过多，导致帧率偏低，用户用起来不流畅</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2016/2d4ac6f1fbfcda20a7a464ea2133e473.jpg" alt=""></p>
+<ul>
+<li>启动时间过长</li>
+</ul>
+<p><img src="https://testerhome.com/photo/2016/98d56b2ff33c8048c12235a39682cb64.png" alt=""></p>
+<h3 id="u7A33_u5B9A"><a href="#u7A33_u5B9A" class="headerlink" title="稳定"></a>稳定</h3><p>好的地方：</p>
+<ul>
+<li>应用总体比较稳定，Monkey 测试下 Crash 出现次数少。</li>
+</ul>
+<p>不好的地方</p>
+<ul>
+<li>弱网下出现2次 ANR ，说明对弱网下异常数据包的处理能力有待加强。</li>
+</ul>
+<h1 id="u9644_u5F55"><a href="#u9644_u5F55" class="headerlink" title="附录"></a>附录</h1><h2 id="u8BC4_u5206_u89C4_u5219"><a href="#u8BC4_u5206_u89C4_u5219" class="headerlink" title="评分规则"></a>评分规则</h2><h3 id="u5B89_u5168-2"><a href="#u5B89_u5168-2" class="headerlink" title="安全"></a>安全</h3><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>检查项说明</th>
+<th>权重（该检查项基础分）</th>
+<th>评分方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本地数据敏感信息均经过加密</td>
+<td>检查 /data/data/<packagename>、/sdcard/ 及其他应用使用到的存储的数据是否经过加密，尝试使用主流解密方法进行解密</packagename></td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>本地数据没有明文存储的敏感信息</td>
+<td>本地没有经过加密的存储数据均非敏感信息（如密码、金额、cookie、token）</td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>本地数据篡改检测</td>
+<td>当手动篡改本地存储数据后，应用能检测到此篡改并自动修正并给出警告</td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>使用 https</td>
+<td>使用 https 进行加密通信</td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>不允许使用自定义 ssl 证书</td>
+<td>应用中校验 SSL 证书是否为此应用对应后台的 SSL 证书。由于 Android 可以通过设置信任第三方证书（如 fiddler 的证书），因此如果信任所有系统信任证书会造成 https 被解密。</td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>敏感信息加密传输</td>
+<td>数据包中所有敏感信息加密传输（包括但不限于密码、金额、用户个人信息）</td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>数据包防篡改校验（服务端）</td>
+<td>不接受一模一样的两个数据包（有可能第二个包是 replay 出来的），不接受手工更改过数据包参数的数据包（需要有个类似 CRC 校验的值检验数据包内容是否被篡改）</td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>数据包防篡改校验（客户端）</td>
+<td>不接受一模一样的两个数据包（有可能第二个包是 replay 出来的），不接受手工更改过数据包参数的数据包（需要有个类似 CRC 校验的值检验数据包内容是否被篡改）</td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>DNS 劫持校验</td>
+<td>接口地址若使用域名应校验服务器是否正确（例如每个数据包中包含自定义规则的 token ）。若使用 ip 地址则此项直接通过。</td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>权限扫描，除少量与外部沟通的组件外其他组件不允许外部调用</td>
+<td>使用 drozer 运行 run app.package.attacksurface <packagename> ，检查允许外部调用的组件是否确实必须允许外部调用</packagename></td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>各 activity 接收空/具有非法值的 intent 后保持稳定</td>
+<td>使用 drozer 运行 run app.activity.start –action <actionname>–category <categoryname> –component <packagename> <componentname> 检查各 activity 接收空/具有非法值的 intent 后反应</componentname></packagename></categoryname></actionname></td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>content provider 防 sql 注入</td>
+<td>使用 drozer 运行 run scanner.provider.injection -a <packagename> 检查是否存在 sql 注入漏洞</packagename></td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>content provider 防遍历文件</td>
+<td>使用 drozer 运行 run scanner.provider.traversal -a <packagename> 检查是否能遍历 content provider 的文件</packagename></td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>DEX加壳保护，防止静态反编译直接获取源码</td>
+<td>使用apktool、apkIDE、Apk改之理/androidkiller进行逆向获取资源。DEX有做加壳加固/有加入花指令更好，最终无法直接得到Java源码</td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>资源文件加密，防止直接查看或修改资源文件</td>
+<td>使用apktool、apkIDE、Apk改之理/androidkiller进行逆向获取资源。资源文件有做压缩加密等操作，无法直接查看</td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>反二次打包，使二次打包时无法成功或打包后的apk无法安装使用</td>
+<td>使用apktool进行重打包。有对核心代码做高级混淆欺骗，使二次打包失败或打包后的apk无法使用</td>
+<td>7.69</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>so文件保护，防止高级调试工具对so文件进行动态调试获取接口等敏感信息</td>
+<td>使用IDA、JEB等工具进行动态调试。对so文件有加密或隐藏，防止被IDA等工具直接动态调试</td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>屏蔽日志输出流中的info、debug等信息</td>
+<td></td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+<tr>
+<td>核心业务中无敏感信息在日志中输出</td>
+<td></td>
+<td>3.85</td>
+<td>通过得所有分。不通过0分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u6027_u80FD-2"><a href="#u6027_u80FD-2" class="headerlink" title="性能"></a>性能</h3><h4 id="u8BBE_u5907_u914D_u7F6E"><a href="#u8BBE_u5907_u914D_u7F6E" class="headerlink" title="设备配置"></a>设备配置</h4><p><img src="https://testerhome.com/photo/2016/c9a5ec6cfe2776a15abaa31bcb723661.png" alt=""></p>
+<h3 id="u68C0_u67E5_u7EC6_u5219"><a href="#u68C0_u67E5_u7EC6_u5219" class="headerlink" title="检查细则"></a>检查细则</h3><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>检查项说明</th>
+<th>权重（该检查项基础分）</th>
+<th>评分方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内存 不超过80M</td>
+<td></td>
+<td>11.11</td>
+<td>小于80M为满分，大于80M，为 权重*(1-(x-80)/80)</td>
+</tr>
+<tr>
+<td>流量 页面消耗不超过200KB</td>
+<td></td>
+<td>11.11</td>
+<td>小于200KB为满分，大于200KB，为 权重*(1-(x-200)/200)</td>
+</tr>
+<tr>
+<td>耗电量 每小时不超过 300 mAh</td>
+<td>手机要处于未充电状态，测试场景分3个：1).高负荷操作1小时(高频率使用或者跑Monkey)。2).中等负荷操作一小时(平时正常使用频率)。3).低负荷操作小时(程序处于后台)。</td>
+<td>11.11</td>
+<td>小于300mAh为满分，大于300mAh为 权重*(1-(x-300)/300)</td>
+</tr>
+<tr>
+<td>页面重绘 3x 和 4x 重绘不超过 1/3</td>
+<td></td>
+<td>11.11</td>
+<td>小于等于2个为满分，大于2个每个扣权重的十分之一分。超过12个零分</td>
+</tr>
+<tr>
+<td>无内存泄露</td>
+<td></td>
+<td>11.11</td>
+<td>0个为满分，大于0个每个扣权重的十分之二分。超过5个零分</td>
+</tr>
+<tr>
+<td>无内存抖动</td>
+<td>内存是否发生抖动:这个地方要从两方面检测，一个是自然抖动，就是无任何操作情况下，是否发生抖动。第二个情况是点击才会出现内存突然增加或减少，频繁操作查看是否出现抖动。若发生抖动，与具有相同功能的其他App进行对比，如果对比App不发生抖动，则可认为待测App存在问题。</td>
+<td>11.11</td>
+<td>0个为满分，大于0个每个扣权重的十分之二分。超过5个零分</td>
+</tr>
+<tr>
+<td>帧率不小于10</td>
+<td></td>
+<td>11.11</td>
+<td>大于10为满分，否则为 权重*(1-(10-x)/10)</td>
+</tr>
+<tr>
+<td>启动时间 热启动时间不超过3s</td>
+<td>综合启动时间为全新启动，冷启动，热启动三项平均值</td>
+<td>11.11</td>
+<td>小于4.5s为满分，否则为 权重*(1-(x-4.5)/4.5)</td>
+</tr>
+<tr>
+<td>响应时间 关键业务响应时间不超过3s</td>
+<td></td>
+<td>11.11</td>
+<td>小于3s为满分，否则为 权重(1-(x-3)/3)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u7A33_u5B9A_u6027-1"><a href="#u7A33_u5B9A_u6027-1" class="headerlink" title="稳定性"></a>稳定性</h3><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>检查项说明</th>
+<th>权重（该检查项基础分）</th>
+<th>评分方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>弱网环境跑monkey 异常概率低于万分7</td>
+<td>9.6K/s~19.8K网络环境进行monkey测试，随机事件数量大于 100万运行时间大于5小时</td>
+<td>10.0</td>
+<td>通过基础分为权重，异常一次扣2分。不通过0分</td>
+</tr>
+<tr>
+<td>无网环境跑monkey 异常概率低于万分7</td>
+<td>无网进行monkey测试，随机事件数量大于100万运行时间大于5小时</td>
+<td>10.0</td>
+<td>通过基础分为权重，异常一次扣2分。不通过0分</td>
+</tr>
+<tr>
+<td>正常网络环境跑monkey 异常概率低于万分7</td>
+<td>正常环境进行monkey测试，随机事件数量大于 100万运行时间大于5小时</td>
+<td>30.0</td>
+<td>通过基础分为权重，异常一次扣2分。不通过0分</td>
+</tr>
+<tr>
+<td>无后台进程应用持续运行10小时无异常情况</td>
+<td></td>
+<td>20.0</td>
+<td>通过基础分为权重，异常一次扣2分。不通过0分</td>
+</tr>
+<tr>
+<td>系统Cpu占用率高于80%以上持续运行5小时无异常退出</td>
+<td></td>
+<td>10.0</td>
+<td>通过基础分为权重，异常一次扣2分。不通过0分</td>
+</tr>
+<tr>
+<td>在测试过程中无明显crash，卡顿等等情况</td>
+<td></td>
+<td>20.0</td>
+<td>通过基础分为权重，异常一次扣2分。不通过0分</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="We_are_Mr_Bug_21_We_are_App_Bug_Hunter_21_21_21"><a href="#We_are_Mr_Bug_21_We_are_App_Bug_Hunter_21_21_21" class="headerlink" title="We are Mr Bug! We are App Bug Hunter!!!"></a>We are Mr Bug! We are App Bug Hunter!!!</h1><h1 id="u76EE_u7684"><a href="#u76EE_u7684" class="headerlink" title="目的"></a>目的</h1><p>用评分的形式，通过:安全、性能、稳定三个方面去检测评估一款APP。</p>
+<h1 id="u6D3B_u52A8_u7B80_u4ECB"><a href="#u6D3B_u52A8_u7B80_u4ECB" class="headerlink" title="活动简介"></a>活动简介</h1><ul>
+<li>主刀医生: Mr Bug 项目团队</li>
+<li>发起时间: 11月4日</li>
+<li>发起方: 毛里求斯</li>
+<li>体检目标: 京东钱包 3.11.1</li>
+<li>体检项: <strong>性能，安全，稳定</strong></li>
+</ul>
+<h1 id="u603B_u5206"><a href="#u603B_u5206" class="headerlink" title="总分"></a>总分</h1><p>总分为 61.54 <em> 33.3%（安全）+ 67.44 </em> 33.3%（性能） + 84.0 * 33.3%（稳定性）= 70.99 分。</p>]]>
+    
+    </summary>
+    
+      <category term="金融类应用" scheme="https://mrbugteam.github.io/categories/%E9%87%91%E8%9E%8D%E7%B1%BB%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+</feed>
