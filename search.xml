@@ -211,7 +211,7 @@
 </tbody>
 </table>
 <blockquote>
-<p>备注：其中 内存抖动、内存泄露 采用的测试机为 小米 红米Note1 ，其它项为 Mi3 联通版。详细内容请看 <a href="/#设备配置">设备配置</a></p>
+<p>备注：其中 内存抖动、内存泄露 采用的测试机为 小米 红米Note1 ，其它项为 Mi3 联通版。详细内容请看 <a href="https://mrbugteam.github.io/#设备配置">设备配置</a></p>
 </blockquote>
 <h2 id="u7A33_u5B9A_u6027"><a href="#u7A33_u5B9A_u6027" class="headerlink" title="稳定性"></a>稳定性</h2><table>
 <thead>
@@ -261,7 +261,7 @@
 </tr>
 </tbody>
 </table>
-<p>由于篇幅所限，评分规则放在报告末尾的 <a href="/#附录">附录</a>。有兴趣的同学可以<a href="/#附录">点击查看</a></p>
+<p>由于篇幅所限，评分规则放在报告末尾的 <a href="https://mrbugteam.github.io/#附录">附录</a>。有兴趣的同学可以<a href="https://mrbugteam.github.io/#附录">点击查看</a></p>
 <h1 id="Bug_List"><a href="#Bug_List" class="headerlink" title="Bug List"></a>Bug List</h1><table>
 <thead>
 <tr>
